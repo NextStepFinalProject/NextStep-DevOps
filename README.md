@@ -2,21 +2,38 @@
 
 Deployment on local machine & exposure via NGINX.
 
+In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat Enterprise Linux).
+
 ## Prerequisites
 
-- npm and node.js.
+- [npm and node.js](https://nodejs.org/).
 
-- Nginx server enabled
+- [NGINX](https://nginx.org/) server enabled:
+
+  ```
+  sudo dnf install -y nginx
+  sudo systemctl enable --now nginx
+  ```
 
 ## Installation
 
-Clone the repository.
+1. Clone the NextStep Repository:
+
+   ```
+   git clone git@github.com:NextStepFinalProject/NextStep.git
+   ```
+
+1. Clone this repository:
+
+   ```
+   git clone git@github.com:NextStepFinalProject/NextStep-DevOps.git
+   ```
 
 1. Setup local deployment via sytemd files:
 
-   Edit the [linux](/linux) services to your environment (i.e. user name, npm path).
+   Edit the [linux](/linux) services to your environment (i.e. user name, npm path, working directory).
 
-   Install the services:
+   Then, install the services:
 
    ```
    sudo cp linux/nextstep-frontend.service /etc/systemd/system/
@@ -28,7 +45,7 @@ Clone the repository.
    sudo systemctl enable --now nextstep-backend.service
    ```
 
-1. Setup nginx configuration
+1. Setup nginx configuration:
 
    ```
    sudo cp nginx/nginx.conf /etc/nginx/nginx.conf
