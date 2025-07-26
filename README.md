@@ -20,7 +20,7 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
 1. Clone the NextStep Repository:
 
    ```
-   git clone git@github.com:NextStepFinalProject/NextStep.git
+   git clone git@github.com:NextStepFinalProject/NextStep.git && cd NextStep
    ```
 
    **Edit the `nextstep-backend/.env`, and `nextstep-frontend/.env` files:**
@@ -38,10 +38,16 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
    VITE_ALLOWED_HOSTS=nextstep.theworkpc.com
    ```
 
+   Done. Step out from the NextStep directory:
+
+   ```
+   cd ..
+   ```
+
 1. Clone this repository:
 
    ```
-   git clone git@github.com:NextStepFinalProject/NextStep-DevOps.git
+   git clone git@github.com:NextStepFinalProject/NextStep-DevOps.git && NextStep-DevOps
    ```
 
 1. Setup local deployment via sytemd files:
