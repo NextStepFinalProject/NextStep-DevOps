@@ -23,6 +23,21 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
    git clone git@github.com:NextStepFinalProject/NextStep.git
    ```
 
+   **Edit the `nextstep-backend/.env`, and `nextstep-frontend/.env` files:**
+
+   In the `nextstep-backend/.env`, setup:
+
+   ```
+   FRONTEND_URL=http://nextstep.theworkpc.com:1785
+   ```
+
+   In the `nextstep-frontend/.env`, setup:
+
+   ```
+   VITE_DOMAIN_NAME=0.0.0.0
+   VITE_ALLOWED_HOSTS=nextstep.theworkpc.com
+   ```
+
 1. Clone this repository:
 
    ```
