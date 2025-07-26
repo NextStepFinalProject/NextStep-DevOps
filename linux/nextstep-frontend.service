@@ -1,0 +1,16 @@
+[Unit]
+Description=NextStep Frontend Service
+After=network.target
+
+[Service]
+ExecStartPre=/bin/bash -c "PATH=/home/tal/.nvm/versions/node/v22.17.1/bin:$PATH exec npm i"
+ExecStart=/bin/bash -c "PATH=/home/tal/.nvm/versions/node/v22.17.1/bin:$PATH exec npm run dev"
+Restart=on-failure
+RestartSec=10
+User=tal
+Group=tal
+Type=simple
+WorkingDirectory=/home/tal/Code/NextStep/nextstep-frontend
+
+[Install]
+WantedBy=multi-user.target
