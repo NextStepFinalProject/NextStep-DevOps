@@ -1,12 +1,12 @@
 # NextStep-DevOps
 
-Fast (and naive) deployment on local machine & exposure via kubernetes HTTPRoute.
+Deployment on local machine & exposure via NGINX.
 
 ## Prerequisites
 
 - npm and node.js.
 
-- Kubernetes With Gateway API.
+- Nginx server enabled
 
 ## Installation
 
@@ -28,10 +28,11 @@ Clone the repository.
    sudo systemctl enable --now nextstep-backend.service
    ```
 
-1. Setup the kubernetes
+1. Setup nginx configuration
 
    ```
-   kubectl apply -k kubernetes
+   sudo cp nginx/nginx.conf /etc/nginx/nginx.conf
+   sudo systemctl restart nginx
    ```
 
 ## Usage
