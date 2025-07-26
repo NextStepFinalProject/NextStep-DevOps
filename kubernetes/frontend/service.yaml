@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextstep-frontend-external-app
+spec:
+  ports:
+  - name: nextstep-frontend-port
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  clusterIP: None
+  type: ClusterIP
