@@ -38,10 +38,18 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
    VITE_ALLOWED_HOSTS=nextstep.theworkpc.com
    ```
 
+1. Setup build of frontend:
+
+   ```
+   cd nextstep-frontend
+   npm i
+   npm run build
+   ```
+
    Done. Step out from the NextStep directory:
 
    ```
-   cd ..
+   cd ../..
    ```
 
 1. Clone this repository:
@@ -50,23 +58,23 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
    git clone git@github.com:NextStepFinalProject/NextStep-DevOps.git && NextStep-DevOps
    ```
 
-1. Setup local deployment via sytemd files:
+1. Setup local deployment via systemd files:
 
-   Edit the [linux](/linux) services to your environment (i.e. user name, npm path, working directory).
+   Edit the [linux backend service](/linux/nextstep-backend.service) to your environment (i.e. user name, npm path, working directory).
 
-   Then, install the services:
+   Then, install the backend service:
 
    ```
-   sudo cp linux/nextstep-frontend.service /etc/systemd/system/
    sudo cp linux/nextstep-backend.service /etc/systemd/system/
    
    sudo systemctl daemon-reload
    
-   sudo systemctl enable --now nextstep-frontend.service
    sudo systemctl enable --now nextstep-backend.service
    ```
-
+   
 1. Setup nginx configuration:
+
+   Edit the [nginx.conf](/nginx/nginx.conf) file to your environment (i.e. user name, build files path).
 
    ```
    sudo cp nginx/nginx.conf /etc/nginx/nginx.conf
