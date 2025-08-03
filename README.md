@@ -78,13 +78,13 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
 
    Edit the [nginx.conf](/nginx/nginx.conf) file to your environment (i.e. user name, build files path).
 
-   Then, add your own user to the `nginx` group:
+   Then, add the `nginx` user to the `tal` group:
 
    ```
    sudo usermod -a -G tal nginx
    ```
 
-   Give execute permissions to all of the groups that `tal` uses (that is also `nginx`):
+   Give execute permissions to `tal` group:
 
    ```
    chmod 710 /home/tal
