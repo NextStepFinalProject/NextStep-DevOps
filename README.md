@@ -17,6 +17,8 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
 
 ## Installation
 
+**Disclaimer:** In this guide, we assume that the current user name is `tal`.
+
 1. Clone the NextStep Repository:
 
    ```
@@ -75,6 +77,20 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
 1. Setup nginx configuration:
 
    Edit the [nginx.conf](/nginx/nginx.conf) file to your environment (i.e. user name, build files path).
+
+   Then, add your own user to the `nginx` group:
+
+   ```
+   sudo usermod -a -G tal nginx
+   ```
+
+   Give execute permissions to all of the groups that `tal` uses (that is also `nginx`):
+
+   ```
+   chmod 710 /home/tal
+   ```
+
+   Apply the configuration, and restart nginx:
 
    ```
    sudo cp nginx/nginx.conf /etc/nginx/nginx.conf
