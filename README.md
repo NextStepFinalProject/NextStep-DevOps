@@ -87,7 +87,23 @@ In this guide we use [Rocky Linux](https://rockylinux.org/) (similar as Red Hat 
    Give execute permissions to `tal` group:
 
    ```
-   chmod 710 /home/tal
+   chmod g+x /home/tal
+   chmod g+x /home/tal/Code
+   chmod g+x /home/tal/Code/NextStep
+   chmod g+x /home/tal/Code/NextStep/nextstep-frontend
+   chmod -R g+rx /home/tal/Code/NextStep/nextstep-frontend/dist
+   ```
+
+   Confirm `nginx` is in the `tal` group:
+
+   ```
+   id nginx
+   ```
+
+   Test that the `index.html` file can be accesses by the `nginx` user:
+
+   ```
+   sudo -u nginx cat /home/tal/Code/NextStep/nextstep-frontend/dist/index.html
    ```
 
    Apply the configuration, and restart nginx:
